@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="logo">
+                <h1>Image Editor Pro</h1>
+                <p>Professional image editing made simple</p>
+            </div>
+            
+            <div class="control-section">
+                <div class="section-title">Exposure</div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Brightness</span>
+                        <span class="slider-value" id="brightnessValue">0</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="brightness" min="-100" max="100" value="0">
+                    </div>
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Contrast</span>
+                        <span class="slider-value" id="contrastValue">0</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="contrast" min="-100" max="100" value="0">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <div class="section-title">Color</div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Saturation</span>
+                        <span class="slider-value" id="saturationValue">0</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="saturation" min="-100" max="100" value="0">
+                    </div>
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Hue Shift</span>
+                        <span class="slider-value" id="hueValue">0</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="hue" min="-180" max="180" value="0">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="control-section">
+                <div class="section-title">Actions</div>
+                <div class="action-buttons">
+                    <div class="btn-row">
+                        <button id="resetBtn" class="btn-secondary">Reset</button>
+                        <button id="undoBtn" class="btn-secondary">Undo</button>
+                    </div>
+                    <button id="saveBtn" class="btn-success">Export Image</button>
+                    <button id="newImageBtn" class="btn-primary">Load New Image</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="workspace">
+            <div id="uploadZone" class="upload-area">
+                <div class="upload-icon">📸</div>
+                <div class="upload-text">
+                    <h3>Drop your image here</h3>
+                    <p>or click to browse • JPG, PNG, WEBP supported</p>
+                </div>
+            </div>
+            
+            <div class="canvas-container hidden" id="canvasContainer">
+                <canvas id="canvas"></canvas>
+            </div>
+            
+            <div class="floating-controls hidden" id="floatingControls">
+                <div class="floating-btn" id="fullscreenBtn" title="Fullscreen">⛶</div>
+                <div class="floating-btn" id="zoomBtn" title="Fit to screen">🔍</div>
+            </div>
+        </div>
+    </div>
+    
+    <input type="file" id="fileInput" accept="image/*">
+    
+    <script src="script.js"></script>
+</body>
+</html>
