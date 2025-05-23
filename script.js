@@ -5,7 +5,7 @@ const canvasContainer = document.getElementById('canvasContainer');
 const floatingControls = document.getElementById('floatingControls');
 const fileInput = document.getElementById('fileInput');
 
-// App state - keeping track of image data and edit history
+// keep track of image data and edit history
 let originalImageData = null;
 let currentImage = null;
 let editHistory = [];
@@ -21,7 +21,7 @@ const controls = {
 
 setupEventListeners();
 
-// Wire up all the event listeners for drag/drop, sliders, and buttons
+// event listeners for drag/drop, sliders, and buttons
 function setupEventListeners() {
     uploadZone.addEventListener('click', () => fileInput.click());
     uploadZone.addEventListener('dragover', handleDragOver);
@@ -119,7 +119,7 @@ function updateImage() {
     ctx.putImageData(imageData, 0, 0);
 }
 
-// Individual filter functions - these modify pixel data directly
+// Individual filter functions
 function applyBrightness(imageData, value) {
     const data = imageData.data;
     for (let i = 0; i < data.length; i += 4) {
@@ -322,7 +322,7 @@ function saveImage() {
     }
 }
 
-// Reset everything and go back to upload screen
+// Reset everything
 function loadNewImage() {
     canvasContainer.classList.add('hidden');
     floatingControls.classList.add('hidden');
